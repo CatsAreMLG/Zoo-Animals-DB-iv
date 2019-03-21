@@ -10,6 +10,8 @@ module.exports = {
   },
   findZoos: _ => {
     return db('zoos')
+      .select('zoos.id', 'zoo_name', 'address')
+      .innerJoin('addresses', 'zoo_id', 'zoos.id')
   },
   findAnimals: _ => {
     return db('animals')
