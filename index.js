@@ -1,9 +1,9 @@
 const db = require('./data/dbHelpers')
 
-db.findZoos()
-  .then(zoos => {
-    console.log('zoos', zoos)
+db.findAnimals()
+  .then(animals => {
+    console.log('animals', animals)
   })
   .catch(err => {
-    console.log('issues with zoos', err)
+    console.log('issues with animals', err)
   })

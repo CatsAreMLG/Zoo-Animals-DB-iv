@@ -15,5 +15,8 @@ module.exports = {
   },
   findAnimals: _ => {
     return db('animals')
+      .select('animals.id', 'animal_name', 'species_name', 'zoo_name')
+      .innerJoin('species', 'species_id', 'species.id')
+      .innerJoin('zoos', 'zoo_id', 'zoos.id')
   }
 }
