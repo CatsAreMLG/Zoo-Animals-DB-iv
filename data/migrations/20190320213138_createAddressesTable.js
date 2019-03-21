@@ -5,6 +5,14 @@ exports.up = function(knex, Promise) {
       .string('address', 128)
       .notNullable()
       .unique()
+    tbl
+      .integer('zoo_id')
+      .unique()
+      .unsigned()
+      .reference('id')
+      .inTable('zoos')
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE')
   })
 }
 
