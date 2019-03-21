@@ -9,7 +9,7 @@ exports.up = function(knex, Promise) {
       .integer('zoo_id')
       .unique()
       .unsigned()
-      .reference('id')
+      .references('id')
       .inTable('zoos')
       .onDelete('CASCADE')
       .onUpdate('CASCADE')
