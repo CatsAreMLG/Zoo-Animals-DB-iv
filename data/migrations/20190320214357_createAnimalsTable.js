@@ -7,7 +7,6 @@ exports.up = function(knex, Promise) {
       .unique()
     tbl
       .integer('zoo_id')
-      .unique()
       .unsigned()
       .references('id')
       .inTable('zoos')
@@ -15,7 +14,6 @@ exports.up = function(knex, Promise) {
       .onUpdate('CASCADE')
     tbl
       .integer('species_id')
-      .unique()
       .unsigned()
       .references('id')
       .inTable('species')
